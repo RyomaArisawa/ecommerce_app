@@ -4,9 +4,9 @@ import 'package:ecommerce_app/src/app.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
   // https://docs.flutter.dev/testing/errors
   await runZonedGuarded(() async {
+    WidgetsFlutterBinding.ensureInitialized();
     runApp(const MyApp());
 
     FlutterError.onError = (FlutterErrorDetails details) {

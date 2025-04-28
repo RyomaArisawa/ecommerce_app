@@ -58,7 +58,7 @@ class ShoppingCartIconBadge extends StatelessWidget {
           textAlign: TextAlign.center,
           style: Theme.of(context)
               .textTheme
-              .caption!
+              .bodySmall!
               .copyWith(color: Colors.white),
         ),
       ),

@@ -38,7 +38,7 @@ class UserDataTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final style = Theme.of(context).textTheme.subtitle2!;
+    final style = Theme.of(context).textTheme.bodySmall!;
     // TODO: get user from auth repository
     const user = AppUser(uid: '123', email: 'test@test.com');
     return DataTable(
