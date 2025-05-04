@@ -1,11 +1,11 @@
+import 'package:ecommerce_app/src/constants/breakpoints.dart';
 import 'package:flutter/material.dart';
-import 'package:ecommerce_app/src/constants/app_sizes.dart';
 
 /// Responsive layout that shows two child widgets side by side if there is
 /// enough space, or vertically stacked if there is not enough space.
 class ResponsiveTwoColumnLayout extends StatelessWidget {
   const ResponsiveTwoColumnLayout({
-    Key? key,
+    super.key,
     required this.startContent,
     required this.endContent,
     this.startFlex = 1,
@@ -16,7 +16,7 @@ class ResponsiveTwoColumnLayout extends StatelessWidget {
     this.rowCrossAxisAlignment = CrossAxisAlignment.start,
     this.columnMainAxisAlignment = MainAxisAlignment.start,
     this.columnCrossAxisAlignment = CrossAxisAlignment.stretch,
-  }) : super(key: key);
+  });
   final Widget startContent;
   final Widget endContent;
   final int startFlex;
