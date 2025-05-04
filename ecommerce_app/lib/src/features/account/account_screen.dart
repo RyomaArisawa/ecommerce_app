@@ -1,9 +1,11 @@
+import 'package:ecommerce_app/src/common_widgets/alert_dialogs.dart';
 import 'package:ecommerce_app/src/localization/string_hardcoded.dart';
 import 'package:ecommerce_app/src/models/app_user.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/src/common_widgets/action_text_button.dart';
 import 'package:ecommerce_app/src/common_widgets/responsive_center.dart';
 import 'package:ecommerce_app/src/constants/app_sizes.dart';
+import 'package:go_router/go_router.dart';
 
 /// Simple account screen showing some user info and a logout button.
 class AccountScreen extends StatelessWidget {
@@ -19,7 +21,17 @@ class AccountScreen extends StatelessWidget {
             text: 'Logout'.hardcoded,
             onPressed: () async {
               // TODO: Sign out
-              Navigator.of(context).pop();
+              final goRouter = GoRouter.of(context);
+              final logout = await showAlertDialog(
+                context: context,
+                content: 'Are you sure you want to logout?'.hardcoded,
+                title: 'Are you sure?'.hardcoded,
+                cancelActionText: 'Cancel'.hardcoded,
+                defaultActionText: 'Logout'.hardcoded,
+              );
+              if (logout == true) {
+                goRouter.pop();
+              }
             },
           ),
         ],
@@ -38,7 +50,7 @@ class UserDataTable extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final style = Theme.of(context).textTheme.subtitle2!;
+    final style = Theme.of(context).textTheme.bodySmall!;
     // TODO: get user from auth repository
     const user = AppUser(uid: '123', email: 'test@test.com');
     return DataTable(

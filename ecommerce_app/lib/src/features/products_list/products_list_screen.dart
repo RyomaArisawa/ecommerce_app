@@ -52,7 +52,7 @@ class _ProductsListScreenState extends State<ProductsListScreen> {
             child: ProductsSearchTextField(),
             // child: Text(
             //   'Latest Products'.hardcoded,
-            //   style: Theme.of(context).textTheme.headline4,
+            //   style: Theme.of(context).textTheme.titleMedium,
             // ),
           ),
           ResponsiveSliverCenter(
